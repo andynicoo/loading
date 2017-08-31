@@ -21,25 +21,25 @@
 @keyframes before {
   0% {
     width: 0.5em;
-    box-shadow: 1em -0.5em rgba(254, 59, 239, 0.68), -1em 0.5em rgba(254, 100, 36, 0.88); }
+    box-shadow: 1em -0.5em rgba(61, 184, 143, 0.75), -1em 0.5em rgba(233, 169, 32, 0.75); }
   35% {
     width: 2.5em;
-    box-shadow: 0 -0.5em rgba(254, 59, 239, 0.68), 0 0.5em rgba(254, 100, 36, 0.88); }
+    box-shadow: 0 -0.5em rgba(61, 184, 143, 0.75), 0 0.5em rgba(233, 169, 32, 0.75); }
   70% {
     width: 0.5em;
-    box-shadow: -1em -0.5em rgba(254, 59, 239, 0.68), 1em 0.5em rgba(254, 100, 36, 0.88); }
+    box-shadow: -1em -0.5em rgba(61, 184, 143, 0.75), 1em 0.5em rgba(233, 169, 32, 0.75); }
   100% {
-    box-shadow: 1em -0.5em rgba(254, 59, 239, 0.68), -1em 0.5em rgba(254, 100, 36, 0.88); } }
+    box-shadow: 1em -0.5em rgba(61, 184, 143, 0.75), -1em 0.5em rgba(233, 169, 32, 0.75); } }
 
 @keyframes after {
   0% {
     height: 0.5em;
-    box-shadow: 0.5em 1em rgba(62, 254, 177, 0.73), -0.5em -1em rgba(91, 254, 44, 0.75); }
+    box-shadow: 0.5em 1em rgba(78, 196, 219, 0.75), -0.5em -1em rgba(225, 20, 98, 0.75); }
   35% {
     height: 2.5em;
-    box-shadow: 0.5em 0 rgba(62, 254, 177, 0.73), -0.5em 0 rgba(91, 254, 44, 0.75); }
+    box-shadow: 0.5em 0 rgba(78, 196, 219, 0.75), -0.5em 0 rgba(225, 20, 98, 0.75); }
   70% {
     height: 0.5em;
-    box-shadow: 0.5em -1em rgba(62, 254, 177, 0.73), -0.5em 1em rgba(91, 254, 44, 0.75); }
+    box-shadow: 0.5em -1em rgba(78, 196, 219, 0.75), -0.5em 1em rgba(225, 20, 98, 0.75); }
   100% {
-    box-shadow: 0.5em 1em rgba(62, 254, 177, 0.73), -0.5em -1em rgba(91, 254, 44, 0.75); } }
+    box-shadow: 0.5em 1em rgba(78, 196, 219, 0.75), -0.5em -1em rgba(225, 20, 98, 0.75); } }
