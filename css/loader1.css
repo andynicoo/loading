@@ -6,7 +6,7 @@ body {
   position: relative;
   width: 2.5em;
   height: 2.5em;
-  /*transform: rotate(165deg);*/ }
+  transform: rotate(165deg); }
   .loader1:before, .loader1:after {
     content: '';
     position: absolute;
@@ -16,19 +16,16 @@ body {
     width: 0.5em;
     height: 0.5em;
     border-radius: 0.25em;
-    transform: translate(-50%, -50%);
-    width: 0.5em;
-     
-  }
+    transform: translate(-50%, -50%); }
   .loader1:before {
     animation: before 2s infinite; }
-  /*.loader1:after {
-    animation: after 2s infinite; }*/
+  .loader1:after {
+    animation: after 2s infinite; }
 
 @keyframes before {
   0% {
     width: 0.5em;
-    box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75); }
+    box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75); }
   35% {
     width: 2.5em;
     box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75); }
