@@ -1,2 +1,2 @@
 # loading
-css svg loading
+css loading

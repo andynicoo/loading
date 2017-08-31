@@ -1,19 +1,14 @@
 $colors:
-  rgba(225, 20, 98, 0.75)
-  rgba(61, 184, 143, 0.75)
-  rgba(111, 202, 220, 0.75)
-  rgba(233, 169, 32, 0.75);
+  rgba(254, 59, 239, 0.68)
+  rgba(62, 254, 177, 0.73)
+  rgba(254, 100, 36, 0.88)
+  rgba(91, 254, 44, 0.75);
 $size: 2.5em;
 $thickness: 0.5em;
 
 // Calculated variables.
 $lat: ($size - $thickness) / 2;
 $offset: $lat - $thickness;
-
-html,
-body {
-  height: 100%;
-}
 
 .loader1 {
   position: relative;
