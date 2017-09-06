@@ -1,0 +1,67 @@
+$colors:
+   rgba(61, 184, 143, 0.75) rgba(78, 196, 219, 0.75) rgba(233, 169, 32, 0.75) rgba(225, 20, 98, 0.75);
+$unit:0.05em;
+$size: 5em;
+$thickness: 0.5em;
+
+.loader2 {
+  position: relative;
+  width: $size;
+  height: $size;
+  background: #eee;
+  
+  &:before,
+  &:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: $thickness;
+    height: $thickness;
+    border-radius: $thickness / 2;
+    transform: translate(-50%, -50%);    
+  }
+  
+  &:before{
+    box-shadow:
+    0 $thickness nth($colors, 3),
+    $thickness $unit*9 nth($colors, 1),
+    -$thickness $unit*9 nth($colors, 1),
+    2*$thickness $unit*6 nth($colors, 2),
+    -2*$thickness $unit*6 nth($colors, 2);
+  }
+
+  &:after{
+    animation: after2 2s infinite;
+  }
+
+  @keyframes after2 {
+    0% {      
+      box-shadow:
+        4*$thickness $unit*-3 nth($colors, 4),
+        -2.9*$thickness $unit*1 nth($colors, 4);
+    }    
+    25% {
+      box-shadow:
+        2.9*$thickness $unit*1 nth($colors, 4),
+        -2.9*$thickness $unit*1 nth($colors, 4);
+    }    
+    50% {
+      box-shadow:
+        2.9*$thickness $unit*1 nth($colors, 4),
+        -4*$thickness $unit*-3 nth($colors, 4);
+    }
+    75% {
+      box-shadow:
+        2.9*$thickness $unit*1 nth($colors, 4),
+        -2.9*$thickness $unit*1 nth($colors, 4);
+    }
+    100% {
+      box-shadow:
+        4*$thickness $unit*-3 nth($colors, 4),
+        -2.9*$thickness $unit*1 nth($colors, 4);
+    }
+  }
+}
+
