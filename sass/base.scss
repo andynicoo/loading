@@ -1,4 +1,15 @@
-html,
+body, ul, p, select{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+}
+
 body {
-    height: 100%;
+    background: #333;
+    color: #fff;
+    max-width: 1024px;
+    margin:0 auto;
 }

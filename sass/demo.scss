@@ -1,0 +1,13 @@
+@import "base";
+
+.item-list li {
+    width: 23%;
+    float: left;
+    background: #222;
+    height: 130px;
+    min-width: 130px;
+    margin:0 1% 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
