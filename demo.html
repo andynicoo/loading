@@ -9,67 +9,20 @@
 </head>
 
 <body>
-	
-<style>
-.clock-box {
-   width:300px;
-   height:300px;
-   margin:100px auto;
-   border:1px solid #00ff90;
-}
 
-.clock {
-   width: 2px;
-   height: 100px;
-   background: #000000;
-   margin: 30px auto;
-   position: relative;
- }
-.clock::after {
-   content: "";
-   position: absolute;
-   bottom: -20px;
-   left: -9px;
-   width: 20px;
-   height: 20px;
-   border-radius: 10px;
-   background: #ff0000;
-}
-
-.clock {
-   -webkit-animation: go 1s ease-in-out alternate infinite;
-   -moz-animation: go 1s ease-in-out alternate infinite;
-   animation: go 1s ease-in-out alternate infinite;
-}
-@keyframes go {
-   0% {
-       -webkit-transform: rotate(30deg);
-       -webkit-transform-origin: top center;
-       -moz-transform: rotate(30deg);
-       -moz-transform-origin: top center;
-       transform: rotate(30deg);
-       transform-origin: top center;
-    }
-    100% {
-       -webkit-transform: rotate(-30deg);
-       -webkit-transform-origin: top center;
-       -moz-transform: rotate(-30deg);
-       -moz-transform-origin: top center;
-       transform: rotate(-30deg);
-       transform-origin: top center;
-    }
-}
-</style>
-<div class="clock-box">
-	<div class="clock"></div>
-</div>
 <section class="container">
     <ul class="item-list">
         <li>
             <div class="loader1"></div>
         </li>
         <li>
-            <div class="loader2"></div>
+            <div class="loader2">
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>
+            </div>
         </li>
     </ul>
 </section>

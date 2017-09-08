@@ -1,65 +1,62 @@
-$colors:
-   rgba(61, 184, 143, 0.75) rgba(78, 196, 219, 0.75) rgba(233, 169, 32, 0.75) rgba(225, 20, 98, 0.75);
-$unit:0.05em;
+$colors:rgba(61, 184, 143, 0.75) rgba(78, 196, 219, 0.75) rgba(233, 169, 32, 0.75) rgba(225, 20, 98, 0.75);
 $size: 5em;
-$thickness: 0.5em;
+$origin: top center;
+$startDeg: 24deg;
 
 .loader2 {
   position: relative;
   width: $size;
   height: $size;
   
-  &:before,
-  &:after{
-    content: '';
+  .ball {
+    width: 1px;
+    height: 3.5em;
+    background: #666;
     position: absolute;
-    top: 50%;
     left: 50%;
-    display: block;
-    width: $thickness;
-    height: $thickness;
-    border-radius: $thickness / 2;
-    transform: translate(-50%, -50%);    
-  }
-  
-  &:before{
-    box-shadow:
-    0 $thickness nth($colors, 3),
-    $thickness $unit*9 nth($colors, 1),
-    -$thickness $unit*9 nth($colors, 1),
-    2*$thickness $unit*6 nth($colors, 2),
-    -2*$thickness $unit*6 nth($colors, 2);
+    transform-origin: $origin;    
+  }   
+
+  .ball:after {
+    content: "";
+    position: absolute;
+    bottom: -$size / 10;
+    left: -$size / 20;
+    width: $size / 10;
+    height: $size / 10;
+    border-radius: $size / 20;    
   }
 
-  &:after{
-    animation: after2 2s ease-in-out infinite;
-  }
-
-  @keyframes after2 {
-    0% {      
-      box-shadow:
-        4*$thickness $unit*-3 nth($colors, 4),
-        -2.9*$thickness $unit*1 nth($colors, 4);
-    }    
-    25% {
-      box-shadow:
-        2.9*$thickness $unit*1 nth($colors, 4),
-        -2.9*$thickness $unit*1 nth($colors, 4);
-    }    
-    50% {
-      box-shadow:
-        2.9*$thickness $unit*1 nth($colors, 4),
-        -4*$thickness $unit*-3 nth($colors, 4);
+  @for $i from 1 through 5 {
+       :nth-child(#{$i}) {
+      transform: rotate($startDeg - 8deg * $i);
+      background: nth($colors, #{i});
     }
-    75% {
-      box-shadow:
-        2.9*$thickness $unit*1 nth($colors, 4),
-        -2.9*$thickness $unit*1 nth($colors, 4);
+
+    :nth-child(#{$i}):after{
+      background: nth($colors, 4);
+    }
+  }
+
+  :nth-child(1) {
+    //animation: swing 1s ease-in-out alternate infinite;
+  }
+
+  @keyframes swingL {
+    0% {
+      transform: rotate(30deg);
     }
     100% {
-      box-shadow:
-        4*$thickness $unit*-3 nth($colors, 4),
-        -2.9*$thickness $unit*1 nth($colors, 4);
+      transform: rotate(-30deg);      
+    }
+  }
+
+  @keyframes swingR {
+    0% {
+      transform: rotate(30deg);
+    }
+    100% {
+      transform: rotate(-30deg);
     }
   }
 }

@@ -2,29 +2,50 @@
   position: relative;
   width: 5em;
   height: 5em; }
-  .loader2:before, .loader2:after {
-    content: '';
+  .loader2 .ball {
+    width: 1px;
+    height: 3.5em;
+    background: #666;
     position: absolute;
-    top: 50%;
     left: 50%;
-    display: block;
+    transform-origin: top center; }
+  .loader2 .ball:after {
+    content: "";
+    position: absolute;
+    bottom: -0.5em;
+    left: -0.25em;
     width: 0.5em;
     height: 0.5em;
-    border-radius: 0.25em;
-    transform: translate(-50%, -50%); }
-  .loader2:before {
-    box-shadow: 0 0.5em rgba(233, 169, 32, 0.75), 0.5em 0.45em rgba(61, 184, 143, 0.75), -0.5em 0.45em rgba(61, 184, 143, 0.75), 1em 0.3em rgba(78, 196, 219, 0.75), -1em 0.3em rgba(78, 196, 219, 0.75); }
-  .loader2:after {
-    animation: after2 2s ease-in-out infinite; }
+    border-radius: 0.25em; }
+  .loader2 :nth-child(1) {
+    transform: rotate(16deg); }
+  .loader2 :nth-child(1):after {
+    background: rgba(225, 20, 98, 0.75); }
+  .loader2 :nth-child(2) {
+    transform: rotate(8deg); }
+  .loader2 :nth-child(2):after {
+    background: rgba(225, 20, 98, 0.75); }
+  .loader2 :nth-child(3) {
+    transform: rotate(0deg); }
+  .loader2 :nth-child(3):after {
+    background: rgba(225, 20, 98, 0.75); }
+  .loader2 :nth-child(4) {
+    transform: rotate(-8deg); }
+  .loader2 :nth-child(4):after {
+    background: rgba(225, 20, 98, 0.75); }
+  .loader2 :nth-child(5) {
+    transform: rotate(-16deg); }
+  .loader2 :nth-child(5):after {
+    background: rgba(225, 20, 98, 0.75); }
 
-@keyframes after2 {
+@keyframes swingL {
   0% {
-    box-shadow: 2em -0.15em rgba(225, 20, 98, 0.75), -1.45em 0.05em rgba(225, 20, 98, 0.75); }
-  25% {
-    box-shadow: 1.45em 0.05em rgba(225, 20, 98, 0.75), -1.45em 0.05em rgba(225, 20, 98, 0.75); }
-  50% {
-    box-shadow: 1.45em 0.05em rgba(225, 20, 98, 0.75), -2em -0.15em rgba(225, 20, 98, 0.75); }
-  75% {
-    box-shadow: 1.45em 0.05em rgba(225, 20, 98, 0.75), -1.45em 0.05em rgba(225, 20, 98, 0.75); }
+    transform: rotate(30deg); }
   100% {
-    box-shadow: 2em -0.15em rgba(225, 20, 98, 0.75), -1.45em 0.05em rgba(225, 20, 98, 0.75); } }
+    transform: rotate(-30deg); } }
+
+@keyframes swingR {
+  0% {
+    transform: rotate(30deg); }
+  100% {
+    transform: rotate(-30deg); } }
