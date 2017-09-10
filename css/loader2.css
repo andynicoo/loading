@@ -22,7 +22,7 @@
   .loader2 :nth-child(1) {
     transform: rotate(24deg);
     background: rgba(223, 18, 225, 0.75);
-    animation: swingL 2s ease-in-out alternate infinite; }
+    animation: swingL 1.5s ease-in-out alternate infinite; }
   .loader2 :nth-child(1):after {
     background: rgba(223, 18, 225, 0.75); }
   .loader2 :nth-child(2) {
@@ -53,7 +53,7 @@
   .loader2 :nth-child(7) {
     transform: rotate(-24deg);
     background: rgba(225, 20, 98, 0.75);
-    animation: swingR 2s ease-in-out alternate infinite; }
+    animation: swingR 1.5s ease-in-out alternate infinite; }
   .loader2 :nth-child(7):after {
     background: rgba(225, 20, 98, 0.75); }
 

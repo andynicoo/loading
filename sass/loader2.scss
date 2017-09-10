@@ -35,10 +35,10 @@ $startDeg: 32deg;
       background: nth($colors, $i);
 
       @if $i == 1 {
-        animation: swingL 2s ease-in-out alternate infinite;
+        animation: swingL 1.5s ease-in-out alternate infinite;
       } 
       @if $i == length($colors) {
-        animation: swingR 2s ease-in-out alternate infinite;
+        animation: swingR 1.5s ease-in-out alternate infinite;
       }
     }
   
