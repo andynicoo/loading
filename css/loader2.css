@@ -1,7 +1,9 @@
 .loader2 {
   position: relative;
   width: 5em;
-  height: 5em; }
+  height: 5em;
+  transform-origin: top center;
+  animation: shakes 2s ease-in-out alternate infinite; }
   .loader2 .ball {
     width: 1px;
     height: 3.5em;
@@ -18,34 +20,67 @@
     height: 0.5em;
     border-radius: 0.25em; }
   .loader2 :nth-child(1) {
-    transform: rotate(16deg); }
+    transform: rotate(24deg);
+    background: rgba(223, 18, 225, 0.75);
+    animation: swingL 2s ease-in-out alternate infinite; }
   .loader2 :nth-child(1):after {
-    background: rgba(225, 20, 98, 0.75); }
+    background: rgba(223, 18, 225, 0.75); }
   .loader2 :nth-child(2) {
-    transform: rotate(8deg); }
+    transform: rotate(16deg);
+    background: rgba(61, 184, 143, 0.75); }
   .loader2 :nth-child(2):after {
-    background: rgba(225, 20, 98, 0.75); }
+    background: rgba(61, 184, 143, 0.75); }
   .loader2 :nth-child(3) {
-    transform: rotate(0deg); }
+    transform: rotate(8deg);
+    background: rgba(233, 32, 192, 0.75); }
   .loader2 :nth-child(3):after {
-    background: rgba(225, 20, 98, 0.75); }
+    background: rgba(233, 32, 192, 0.75); }
   .loader2 :nth-child(4) {
-    transform: rotate(-8deg); }
+    transform: rotate(0deg);
+    background: rgba(46, 221, 26, 0.75); }
   .loader2 :nth-child(4):after {
-    background: rgba(225, 20, 98, 0.75); }
+    background: rgba(46, 221, 26, 0.75); }
   .loader2 :nth-child(5) {
-    transform: rotate(-16deg); }
+    transform: rotate(-8deg);
+    background: rgba(233, 169, 32, 0.75); }
   .loader2 :nth-child(5):after {
+    background: rgba(233, 169, 32, 0.75); }
+  .loader2 :nth-child(6) {
+    transform: rotate(-16deg);
+    background: rgba(78, 196, 219, 0.75); }
+  .loader2 :nth-child(6):after {
+    background: rgba(78, 196, 219, 0.75); }
+  .loader2 :nth-child(7) {
+    transform: rotate(-24deg);
+    background: rgba(225, 20, 98, 0.75);
+    animation: swingR 2s ease-in-out alternate infinite; }
+  .loader2 :nth-child(7):after {
     background: rgba(225, 20, 98, 0.75); }
 
 @keyframes swingL {
   0% {
-    transform: rotate(30deg); }
+    transform: rotate(50deg); }
+  25% {
+    transform: rotate(24deg); }
+  75% {
+    transform: rotate(24deg); }
   100% {
-    transform: rotate(-30deg); } }
+    transform: rotate(50deg); } }
 
 @keyframes swingR {
   0% {
-    transform: rotate(30deg); }
+    transform: rotate(-24deg); }
+  25% {
+    transform: rotate(-24deg); }
+  50% {
+    transform: rotate(-50deg); }
+  75% {
+    transform: rotate(-24deg); }
   100% {
-    transform: rotate(-30deg); } }
+    transform: rotate(-24deg); } }
+
+@keyframes shakes {
+  0% {
+    transform: rotate(-1deg); }
+  100% {
+    transform: rotate(1deg); } }
