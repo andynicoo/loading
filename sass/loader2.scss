@@ -1,19 +1,22 @@
 $colors:rgba(223, 18, 225, 0.75) rgba(61, 184, 143, 0.75) rgba(233, 32, 192, 0.75) rgba(46, 221, 26, 0.75) rgba(233, 169, 32, 0.75) rgba(78, 196, 219, 0.75)  rgba(225, 20, 98, 0.75);
 $size: 5em;
 $origin: top center;
-$startDeg: 32deg;
+$unitDeg: 8deg;
+
+// Calculated variables.
+$maxDeg: $unitDeg * 6;
+$minDeg: $unitDeg * 3;
 
 .loader2 {
   position: relative;
   width: $size;
   height: $size;
   transform-origin: $origin;
-  animation: shakes 2s ease-in-out alternate infinite;
+  animation: slight 2s linear alternate infinite;
   
   .ball {
     width: 1px;
     height: 3.5em;
-    background: #666;
     position: absolute;
     left: 50%;
     transform-origin: $origin;
@@ -26,12 +29,12 @@ $startDeg: 32deg;
     left: -$size / 20;
     width: $size / 10;
     height: $size / 10;
-    border-radius: $size / 20;    
+    border-radius: $size / 20;
   }  
 
   @for $i from 1 through length($colors) {
     :nth-child(#{$i}) {
-      transform: rotate($startDeg - 8deg * $i);
+      transform: rotate($unitDeg * (4 - $i));
       background: nth($colors, $i);
 
       @if $i == 1 {
@@ -49,42 +52,40 @@ $startDeg: 32deg;
 
   @keyframes swingL {
     0% {
-      transform: rotate(50deg);
+      transform: rotate($maxDeg);
     }
     25% {
-      transform: rotate(24deg);
+      transform: rotate($minDeg);
     }
     75% {
-      transform: rotate(24deg);
+      transform: rotate($minDeg);
     }
     100% {
-      transform: rotate(50deg);      
+      transform: rotate($maxDeg);      
     }
   }
 
   @keyframes swingR {
     0% {
-      transform: rotate(-24deg);
+      transform: rotate(-$minDeg);
     }
     25% {
-      transform: rotate(-24deg);
+      transform: rotate(-$minDeg);
     }
     50% {
-      transform: rotate(-50deg);
+      transform: rotate(-$maxDeg);
     }
     75% {
-      transform: rotate(-24deg);
-    }
-    100% {
-      transform: rotate(-24deg);      
+      transform: rotate(-$minDeg);
     }
   }
-  @keyframes shakes {
+
+  @keyframes slight {
     0% {
-      transform: rotate(-1deg);
+      transform: rotate(-2deg);
     }
     100% {
-      transform: rotate(1deg);      
+      transform: rotate(2deg);
     }
   }
 }

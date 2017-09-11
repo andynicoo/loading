@@ -3,11 +3,10 @@
   width: 5em;
   height: 5em;
   transform-origin: top center;
-  animation: shakes 2s ease-in-out alternate infinite; }
+  animation: slight 2s linear alternate infinite; }
   .loader2 .ball {
     width: 1px;
     height: 3.5em;
-    background: #666;
     position: absolute;
     left: 50%;
     transform-origin: top center; }
@@ -59,13 +58,13 @@
 
 @keyframes swingL {
   0% {
-    transform: rotate(50deg); }
+    transform: rotate(48deg); }
   25% {
     transform: rotate(24deg); }
   75% {
     transform: rotate(24deg); }
   100% {
-    transform: rotate(50deg); } }
+    transform: rotate(48deg); } }
 
 @keyframes swingR {
   0% {
@@ -73,14 +72,12 @@
   25% {
     transform: rotate(-24deg); }
   50% {
-    transform: rotate(-50deg); }
+    transform: rotate(-48deg); }
   75% {
-    transform: rotate(-24deg); }
-  100% {
     transform: rotate(-24deg); } }
 
-@keyframes shakes {
+@keyframes slight {
   0% {
-    transform: rotate(-1deg); }
+    transform: rotate(-2deg); }
   100% {
-    transform: rotate(1deg); } }
+    transform: rotate(2deg); } }
