@@ -1,0 +1,158 @@
+$colors:rgba(225, 16, 191, 0.75) rgba(230, 113, 182, 0.75) rgba(208, 58, 222, 0.75);
+$size: 3.5em;
+$origin :left center;
+
+.loader4 {  
+  width: 90px;
+  height: 90px;
+  border-radius: 90px;
+  background: #2980b9;
+  animation: rotation 4s infinite, circleBackgroundColor 4s infinite;
+ 
+
+  &:before {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 45px;
+    border-radius: 90px 90px 0 0;
+    transform-origin: 0% 100%;
+    // animation: move 1s infinite, animationColor 4s infinite;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 45px;
+    border-radius: 0 0 90px 90px;
+    // animation: backgroundColor 4s infinite;
+  }
+
+  @keyframes move {
+    to {
+      transform: rotateX(180deg) rotateZ(0deg);
+    }
+  }
+
+  @keyframes rotation {
+    0% {}
+    25% {
+      transform: rotateZ(0deg);
+    }
+    25.001% {
+      transform: rotateZ(90deg);
+    }
+    50% {
+      transform: rotateZ(90deg);
+    }
+    50.001% {
+      transform: rotateZ(180deg);
+    }
+    75% {
+      transform: rotateZ(180deg);
+    }
+    75.001% {
+      transform: rotateZ(270deg);
+    }
+    99.999% {
+      transform: rotateZ(270deg);
+    }
+    100% {
+      transform: rotateZ(0deg);
+    }
+  }
+
+  @keyframes animationColor {
+    0% {
+      background: #e74c3c;
+    }
+    0.001% {
+      background: #34495e;
+    }
+    25% {
+      background: #2980b9;
+    }
+    25.001% {
+      background: #3498db;
+    }
+    50% {
+      background: #8e44ad;
+    }
+    50.001% {
+      background: #9b59b6;
+    }
+    75% {
+      background: #f39c12;
+    }
+    75.001% {
+      background: #f1c40f;
+    }
+    99.999% {
+      background: #2c3e50;
+    }
+    100% {
+      background: #34495e;
+    }
+  }
+
+  @keyframes backgroundColor {
+    0% {
+      background: #2c3e50;
+    }
+    25% {
+      background: #2c3e50;
+    }
+    25.001% {
+      background: #2980b9;
+    }
+    50% {
+      background: #2980b9;
+    }
+    50.001% {
+      background: #8e44ad;
+    }
+    75% {
+      background: #8e44ad;
+    }
+    75.001% {
+      background: #f39c12;
+    }
+    99.999% {
+      background: #f39c12;
+    }
+    100% {
+      background: #2c3e50;
+    }
+  }
+
+  @keyframes circleBackgroundColor {
+    0% {
+      background: #2980b9;
+    }
+    25% {
+      background: #2980b9;
+    }
+    25.001% {
+      background: #8e44ad;
+    }
+    50% {
+      background: #8e44ad;
+    }
+    50.001% {
+      background: #f39c12;
+    }
+    75% {
+      background: #f39c12;
+    }
+    75.001% {
+      background: #2c3e50;
+    }
+    99.999% {
+      background: #2c3e50;
+    }
+    100% {
+      background: #2980b9;
+    }
+  }
+}
