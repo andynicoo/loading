@@ -10,7 +10,8 @@
     width: 90px;
     height: 45px;
     border-radius: 90px 90px 0 0;
-    transform-origin: 0% 100%; }
+    transform-origin: 0% 100%;
+    animation: move 1s infinite, animationColor 4s infinite; }
   .loader4:after {
     content: "";
     display: block;
@@ -88,17 +89,15 @@
     background: #2980b9; }
   25% {
     background: #2980b9; }
-  25.001% {
+  25.01% {
     background: #8e44ad; }
   50% {
     background: #8e44ad; }
-  50.001% {
+  50.01% {
     background: #f39c12; }
   75% {
     background: #f39c12; }
-  75.001% {
-    background: #2c3e50; }
-  99.999% {
+  75.01% {
     background: #2c3e50; }
   100% {
-    background: #2980b9; } }
+    background: #2c3e50; } }
