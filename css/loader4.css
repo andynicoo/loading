@@ -1,7 +1,7 @@
 .loader4 {
-  width: 90px;
-  height: 90px;
-  border-radius: 90px;
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 3.5em;
   background: #2980b9;
   animation: rotation 4s infinite, circleBackgroundColor 4s infinite; }
   .loader4:before {

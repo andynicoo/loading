@@ -1,11 +1,10 @@
 $colors:rgba(225, 16, 191, 0.75) rgba(230, 113, 182, 0.75) rgba(208, 58, 222, 0.75);
 $size: 3.5em;
-$origin :left center;
 
 .loader4 {  
-  width: 90px;
-  height: 90px;
-  border-radius: 90px;
+  width: $size;
+  height: $size;
+  border-radius: $size;
   background: #2980b9;
   animation: rotation 4s infinite, circleBackgroundColor 4s infinite;
  
