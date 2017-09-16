@@ -3,7 +3,7 @@
   width: 3.5em;
   height: 3.5em;
   border: solid 0.11667em rgba(230, 113, 182, 0.75);
-  border-radius: 1.75em; }
+  border-radius: 3.5em; }
   .loader3:before, .loader3:after {
     content: "";
     position: absolute;

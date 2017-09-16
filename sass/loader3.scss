@@ -7,7 +7,7 @@ $origin :left center;
   width: $size;
   height: $size;
   border:solid $size / 30 nth($colors, 2);
-  border-radius: $size / 2;
+  border-radius: $size;
   
   &:before,
   &:after {

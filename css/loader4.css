@@ -2,102 +2,89 @@
   width: 3.5em;
   height: 3.5em;
   border-radius: 3.5em;
-  background: #2980b9;
-  animation: rotation 4s infinite, circleBackgroundColor 4s infinite; }
+  background: #ffb011;
+  animation: circleColor 5s infinite, rotation 5s infinite; }
+  .loader4:before, .loader4:after {
+    content: "";
+    display: block;
+    width: 3.5em;
+    height: 1.75em; }
   .loader4:before {
-    content: "";
-    display: block;
-    width: 90px;
-    height: 45px;
-    border-radius: 90px 90px 0 0;
+    border-radius: 3.5em 3.5em 0 0;
     transform-origin: 0% 100%;
-    animation: move 1s infinite, animationColor 4s infinite; }
+    animation: beforeColor 5s infinite, turn 1.25s infinite; }
   .loader4:after {
-    content: "";
-    display: block;
-    width: 90px;
-    height: 45px;
-    border-radius: 0 0 90px 90px; }
+    border-radius: 0 0 3.5em 3.5em;
+    animation: afterColor 5s infinite; }
 
-@keyframes move {
+@keyframes turn {
   to {
-    transform: rotateX(180deg) rotateZ(0deg); } }
+    transform: rotateX(180deg) rotateZ(0); } }
 
 @keyframes rotation {
-  0% { }
-  25% {
-    transform: rotateZ(0deg); }
-  25.001% {
-    transform: rotateZ(90deg); }
-  50% {
-    transform: rotateZ(90deg); }
-  50.001% {
-    transform: rotateZ(180deg); }
-  75% {
-    transform: rotateZ(180deg); }
-  75.001% {
-    transform: rotateZ(270deg); }
-  99.999% {
-    transform: rotateZ(270deg); }
-  100% {
-    transform: rotateZ(0deg); } }
-
-@keyframes animationColor {
   0% {
-    background: #e74c3c; }
-  0.001% {
-    background: #34495e; }
+    transform: rotateZ(0); }
   25% {
-    background: #2980b9; }
-  25.001% {
-    background: #3498db; }
-  50% {
-    background: #8e44ad; }
-  50.001% {
-    background: #9b59b6; }
-  75% {
-    background: #f39c12; }
-  75.001% {
-    background: #f1c40f; }
-  99.999% {
-    background: #2c3e50; }
-  100% {
-    background: #34495e; } }
-
-@keyframes backgroundColor {
-  0% {
-    background: #2c3e50; }
-  25% {
-    background: #2c3e50; }
-  25.001% {
-    background: #2980b9; }
-  50% {
-    background: #2980b9; }
-  50.001% {
-    background: #8e44ad; }
-  75% {
-    background: #8e44ad; }
-  75.001% {
-    background: #f39c12; }
-  99.999% {
-    background: #f39c12; }
-  100% {
-    background: #2c3e50; } }
-
-@keyframes circleBackgroundColor {
-  0% {
-    background: #2980b9; }
-  25% {
-    background: #2980b9; }
+    transform: rotateZ(0); }
   25.01% {
-    background: #8e44ad; }
+    transform: rotateZ(90deg); }
   50% {
-    background: #8e44ad; }
+    transform: rotateZ(90deg); }
   50.01% {
-    background: #f39c12; }
+    transform: rotateZ(180deg); }
   75% {
-    background: #f39c12; }
+    transform: rotateZ(180deg); }
   75.01% {
-    background: #2c3e50; }
+    transform: rotateZ(270deg); }
   100% {
-    background: #2c3e50; } }
+    transform: rotateZ(270deg); } }
+
+@keyframes beforeColor {
+  0% {
+    background: #24a379; }
+  25% {
+    background: #ffb011; }
+  50% {
+    background: #2b9db1; }
+  75% {
+    background: #e11462; }
+  100% {
+    background: #24a379; } }
+
+@keyframes afterColor {
+  0% {
+    background: #24a379; }
+  25% {
+    background: #24a379; }
+  25.001% {
+    background: #ffb011; }
+  50% {
+    background: #ffb011; }
+  50.001% {
+    background: #2b9db1; }
+  75% {
+    background: #2b9db1; }
+  75.001% {
+    background: #e11462; }
+  99.999% {
+    background: #e11462; }
+  100% {
+    background: #24a379; } }
+
+@keyframes circleColor {
+  0% {
+    background: #ffb011; }
+  25% {
+    background: #ffb011; }
+  25.01% {
+    background: #2b9db1; }
+  50% {
+    background: #2b9db1; }
+  50.01% {
+    background: #e11462; }
+  75% {
+    background: #e11462; }
+  75.01% {
+    background: #24a379; }
+  100% {
+    background: #24a379; } }
