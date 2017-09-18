@@ -1,0 +1,16 @@
+$colors:rgb(36, 163, 121) rgb(255, 176, 17) rgb(43, 157, 177) rgb(225, 20, 98);
+$size: 3.5em;
+
+.loader5 {
+  width: $size;
+  height: $size;
+  
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    width: $size;
+    height: $size / 2;
+  }
+}
