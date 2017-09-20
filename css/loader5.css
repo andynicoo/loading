@@ -1,0 +1,10 @@
+.loader5 {
+  width: 3.5em;
+  height: 3.5em; }
+  .loader5:before, .loader5:after {
+    content: "";
+    display: block;
+    width: 3.5em;
+    height: 1.75em; }
+  .loader5:before {
+    border: solid 3px #24a379; }

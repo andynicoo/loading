@@ -5,12 +5,15 @@ $size: 3.5em;
   width: $size;
   height: $size;
   
-
   &:before,
   &:after {
     content: "";
     display: block;
     width: $size;
     height: $size / 2;
+  }
+
+  &:before{
+    border:solid 3px nth($colors,1)
   }
 }
