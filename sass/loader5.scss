@@ -4,6 +4,9 @@ $size: 3.5em;
 .loader5 {
   width: $size;
   height: $size;
+  box-shadow: inset 0 0 0 .2em nth($colors,1);
+  border-radius: $size /2;
+  background: #222;
   
   &:before,
   &:after {
@@ -11,9 +14,34 @@ $size: 3.5em;
     display: block;
     width: $size;
     height: $size / 2;
+    background: #222;    
   }
 
   &:before{
-    border:solid 3px nth($colors,1)
+    transform-origin: $size/2 $size/2;
+    animation: load2 2s infinite ease 1.5s;  
+  }
+  &:after {
+    transform-origin: $size/2 0;
+    animation: load2 2s infinite ease;
+  }
+  
+
+  @-webkit-keyframes load2 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes load2 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
