@@ -1,0 +1,116 @@
+$colors:rgba(218, 0, 0, .7) rgba(242, 181, 15, .7) rgba(0, 147, 56, .7);
+$size: 3em;
+$thickness:$size * .3;
+
+.loader6 {
+  width: $size;
+  height: $size;  
+  position: relative;
+
+  .ball,
+  .ball:before,
+  .ball:after{
+    position: absolute;
+    width: $thickness;
+    height: $thickness;
+    border-radius: $thickness;
+  }
+
+  .ball{
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: nth($colors, 1);
+    animation: redball 4s infinite ease-in-out;
+    z-index: 5;
+
+    &:before,
+    &:after {
+      content: "";
+    }
+
+    &:before {
+      z-index: 10;
+      background: nth($colors, 2);
+      animation: yellowball 4s infinite ease-in-out;
+    }
+
+    &:after {
+      z-index: 15;
+      background: nth($colors, 3);
+      animation: greenball 4s infinite ease-in-out;
+    }
+  }
+    
+  @keyframes redball {
+    0% {
+      left: 50%;
+    }
+    16.66% {
+      left: 0%;
+    }
+    33.32% {
+      left: 0%;
+    }
+    49.98% {
+      left: 100%;
+    }
+    66.64% {
+      left: 100%;
+    }
+    83.33% {
+      left: 50%;
+    }
+    100% {
+      left: 50%;
+    }
+  }
+
+  @keyframes yellowball {
+    0% {
+      left: $size * .5;
+    }
+    16.66% {
+      left: $size * .5;
+    }
+    33.32% {
+      left: $size * .5;
+    }
+    49.98% {
+      left: -$size;
+    }
+    66.64% {
+      left: -$size;
+    }
+    83.33% {
+      left: $size * .5;
+    }
+    100% {
+      left: $size * .5;
+    }
+  }
+
+  @keyframes greenball {
+    0% {
+      left: -$size * .5;
+    }
+    16.66% {
+      left: $size;
+    }
+    33.32% {
+      left: $size;
+    }
+    49.98% {
+      left: -$size * .5;
+    }
+    66.64% {
+      left: -$size * .5 ;
+    }
+    83.33% {
+      left: -$size * .5;
+    }
+    100% {
+      left: -$size * .5;
+    }
+  }
+}

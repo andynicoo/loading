@@ -1,30 +1,45 @@
 .loader5 {
   width: 3.5em;
   height: 3.5em;
-  box-shadow: inset 0 0 0 0.2em #24a379;
   border-radius: 1.75em;
-  background: #222; }
+  background: #222;
+  position: relative;
+  animation: circle 12s infinite linear; }
   .loader5:before, .loader5:after {
     content: "";
-    display: block;
-    width: 3.5em;
-    height: 1.75em;
-    background: #222; }
+    position: absolute;
+    width: 4.2em;
+    height: 2.45em;
+    background: #222;
+    left: -0.35em; }
   .loader5:before {
-    transform-origin: 1.75em 1.75em;
-    animation: load2 2s infinite ease 1.5s; }
+    top: -0.35em;
+    transform-origin: 2.1em 2.45em;
+    animation: rotate 2s infinite ease 1.5s; }
   .loader5:after {
-    transform-origin: 1.75em 0;
-    animation: load2 2s infinite ease; }
+    top: 2.1em;
+    transform-origin: 2.1em 0;
+    animation: rotate 2s infinite ease; }
 
-@-webkit-keyframes load2 {
+@keyframes rotate {
   0% {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
 
-@keyframes load2 {
+@keyframes circle {
   0% {
-    transform: rotate(0deg); }
+    transform: rotate(0deg);
+    box-shadow: inset 0 0 0 0.2em #da0000; }
+  25% {
+    transform: rotate(90deg);
+    box-shadow: inset 0 0 0 0.2em #0266c8; }
+  50% {
+    transform: rotate(180deg);
+    box-shadow: inset 0 0 0 0.2em #f2b50f; }
+  75% {
+    transform: rotate(240deg);
+    box-shadow: inset 0 0 0 0.2em #009338; }
   100% {
-    transform: rotate(360deg); } }
+    transform: rotate(360deg);
+    box-shadow: inset 0 0 0 0.2em #da0000; } }
