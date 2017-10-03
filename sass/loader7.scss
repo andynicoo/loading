@@ -1,0 +1,37 @@
+$colors:rgba(223, 18, 225, 0.75) rgba(61, 184, 143, 0.75) rgba(46, 221, 26, 0.75) rgba(233, 169, 32, 0.75) rgba(78, 196, 219, 0.75) rgba(223, 18, 225, 0.75);
+$size: 4em;
+$unitDeg: 10deg;
+
+.loader7 {
+  position: relative;
+  width: $size;
+  height: $size;
+
+  .ball {
+    position: absolute;
+    top:100%;
+    left:50%;
+    width: $size / 8;
+    height: $size / 8;
+    border-radius: $size / 8;
+    transform-origin: 50% -350%;
+    transform:translate(-50%,-50%);
+  }
+
+  @for $i from 1 through length($colors) {
+    :nth-child(#{$i}) {      
+      background: nth($colors, $i);
+      animation: ring 3s ease-in-out infinite $i*0.1s;
+    } 
+  }  
+
+  @keyframes ring {
+    0% {
+      transform:translate(-50%,-50%) rotate(0);
+    }    
+    100% {
+      transform:translate(-50%,-50%) rotate(360deg);      
+    }
+  }
+}
+
