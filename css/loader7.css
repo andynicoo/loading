@@ -13,24 +13,24 @@
     transform: translate(-50%, -50%); }
   .loader7 :nth-child(1) {
     background: rgba(223, 18, 225, 0.75);
-    animation: ring 3s ease-in-out infinite 0.1s; }
+    animation: ring7 3s ease-in-out infinite 0.1s; }
   .loader7 :nth-child(2) {
     background: rgba(61, 184, 143, 0.75);
-    animation: ring 3s ease-in-out infinite 0.2s; }
+    animation: ring7 3s ease-in-out infinite 0.2s; }
   .loader7 :nth-child(3) {
     background: rgba(46, 221, 26, 0.75);
-    animation: ring 3s ease-in-out infinite 0.3s; }
+    animation: ring7 3s ease-in-out infinite 0.3s; }
   .loader7 :nth-child(4) {
     background: rgba(233, 169, 32, 0.75);
-    animation: ring 3s ease-in-out infinite 0.4s; }
+    animation: ring7 3s ease-in-out infinite 0.4s; }
   .loader7 :nth-child(5) {
     background: rgba(78, 196, 219, 0.75);
-    animation: ring 3s ease-in-out infinite 0.5s; }
+    animation: ring7 3s ease-in-out infinite 0.5s; }
   .loader7 :nth-child(6) {
     background: rgba(223, 18, 225, 0.75);
-    animation: ring 3s ease-in-out infinite 0.6s; }
+    animation: ring7 3s ease-in-out infinite 0.6s; }
 
-@keyframes ring {
+@keyframes ring7 {
   0% {
     transform: translate(-50%, -50%) rotate(0); }
   100% {

@@ -21,11 +21,11 @@ $unitDeg: 10deg;
   @for $i from 1 through length($colors) {
     :nth-child(#{$i}) {      
       background: nth($colors, $i);
-      animation: ring 3s ease-in-out infinite $i*0.1s;
+      animation: ring7 3s ease-in-out infinite $i*0.1s;
     } 
   }  
 
-  @keyframes ring {
+  @keyframes ring7 {
     0% {
       transform:translate(-50%,-50%) rotate(0);
     }    
