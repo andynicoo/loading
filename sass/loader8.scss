@@ -1,0 +1,39 @@
+$colors:rgb(36, 163, 121) rgb(255, 176, 17) rgb(29, 126, 216) rgb(225, 20, 98);
+$size: 4em;
+
+.loader8 {
+  position: relative;
+  width: $size;
+  height: $size;
+
+  .ball {
+    position: absolute;
+    top:35%;    
+    width: $size / 4;
+    height: $size / 4;
+    border-radius: $size / 4;
+    transform-origin: 50% -350%;
+    transform:translate(-50%,-50%);
+  }
+
+  @for $i from 1 through length($colors) {
+    :nth-child(#{$i}) {
+      left:($i - 1)*33%;
+      background: nth($colors, $i);
+      animation: keyframes8 2s ease-in-out infinite $i*0.2s;
+    } 
+  }  
+
+  @keyframes keyframes8 {
+    0% {
+      top: 35%;
+    }
+    50% {
+      top: 65%;
+    }
+    100% {
+      top: 35%;
+    }
+  }
+}
+

@@ -1,0 +1,36 @@
+.loader8 {
+  position: relative;
+  width: 4em;
+  height: 4em; }
+  .loader8 .ball {
+    position: absolute;
+    top: 35%;
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+    transform-origin: 50% -350%;
+    transform: translate(-50%, -50%); }
+  .loader8 :nth-child(1) {
+    left: 0%;
+    background: #24a379;
+    animation: keyframes8 2s ease-in-out infinite 0.2s; }
+  .loader8 :nth-child(2) {
+    left: 33%;
+    background: #ffb011;
+    animation: keyframes8 2s ease-in-out infinite 0.4s; }
+  .loader8 :nth-child(3) {
+    left: 66%;
+    background: #1d7ed8;
+    animation: keyframes8 2s ease-in-out infinite 0.6s; }
+  .loader8 :nth-child(4) {
+    left: 99%;
+    background: #e11462;
+    animation: keyframes8 2s ease-in-out infinite 0.8s; }
+
+@keyframes keyframes8 {
+  0% {
+    top: 35%; }
+  50% {
+    top: 65%; }
+  100% {
+    top: 35%; } }
