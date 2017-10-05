@@ -1,9 +1,6 @@
-$colors:
-   rgba(61, 184, 143, 0.75) rgba(78, 196, 219, 0.75) rgba(233, 169, 32, 0.75) rgba(225, 20, 98, 0.75);
+$colors:rgba(36, 163, 121, 0.7) rgba(255, 176, 17, 0.7) rgba(29, 126, 216, 0.7) rgba(225, 20, 98, 0.7);
 $size: 2.5em;
 $thickness: 0.5em;
-
-// Calculated variables.
 $lat: ($size - $thickness) / 2;
 $offset: $lat - $thickness;
 
@@ -27,15 +24,15 @@ $offset: $lat - $thickness;
   }
   
   &:before {
-    animation: before 2s infinite;
+    animation: keyframes1a 2s infinite;
   }
   
   &:after {
-    animation: after 2s infinite;
+    animation: keyframes1b 2s infinite;
   }
 }
 
-@keyframes before {
+@keyframes keyframes1a {
   0% {
     width: $thickness;
     box-shadow:
@@ -61,7 +58,7 @@ $offset: $lat - $thickness;
   }
 }
 
-@keyframes after {
+@keyframes keyframes1b {
   0% {
     height: $thickness;
     box-shadow:

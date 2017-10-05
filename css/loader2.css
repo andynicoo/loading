@@ -3,14 +3,14 @@
   width: 5em;
   height: 5em;
   transform-origin: top center;
-  animation: slight 2s linear alternate infinite; }
-  .loader2 .ball {
+  animation: keyframes2c 2s linear alternate infinite; }
+  .loader2 span {
     width: 1px;
     height: 3.5em;
     position: absolute;
     left: 50%;
     transform-origin: top center; }
-  .loader2 .ball:after {
+  .loader2 span:after {
     content: "";
     position: absolute;
     bottom: -0.5em;
@@ -21,7 +21,7 @@
   .loader2 :nth-child(1) {
     transform: rotate(24deg);
     background: rgba(223, 18, 225, 0.75);
-    animation: swingL 1.5s ease-in-out alternate infinite; }
+    animation: keyframes2a 1.5s ease-in-out alternate infinite; }
   .loader2 :nth-child(1):after {
     background: rgba(223, 18, 225, 0.75); }
   .loader2 :nth-child(2) {
@@ -52,11 +52,11 @@
   .loader2 :nth-child(7) {
     transform: rotate(-24deg);
     background: rgba(225, 20, 98, 0.75);
-    animation: swingR 1.5s ease-in-out alternate infinite; }
+    animation: keyframes2b 1.5s ease-in-out alternate infinite; }
   .loader2 :nth-child(7):after {
     background: rgba(225, 20, 98, 0.75); }
 
-@keyframes swingL {
+@keyframes keyframes2a {
   0% {
     transform: rotate(48deg); }
   25% {
@@ -66,7 +66,7 @@
   100% {
     transform: rotate(48deg); } }
 
-@keyframes swingR {
+@keyframes keyframes2b {
   0% {
     transform: rotate(-24deg); }
   25% {
@@ -76,7 +76,7 @@
   75% {
     transform: rotate(-24deg); } }
 
-@keyframes slight {
+@keyframes keyframes2c {
   0% {
     transform: rotate(-2deg); }
   100% {

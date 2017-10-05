@@ -2,8 +2,6 @@ $colors:rgba(223, 18, 225, 0.75) rgba(61, 184, 143, 0.75) rgba(233, 32, 192, 0.7
 $size: 5em;
 $origin: top center;
 $unitDeg: 8deg;
-
-// Calculated variables.
 $maxDeg: $unitDeg * 6;
 $minDeg: $unitDeg * 3;
 
@@ -12,9 +10,9 @@ $minDeg: $unitDeg * 3;
   width: $size;
   height: $size;
   transform-origin: $origin;
-  animation: slight 2s linear alternate infinite;
+  animation: keyframes2c 2s linear alternate infinite;
   
-  .ball {
+  span {
     width: 1px;
     height: 3.5em;
     position: absolute;
@@ -22,7 +20,7 @@ $minDeg: $unitDeg * 3;
     transform-origin: $origin;
   }   
 
-  .ball:after {
+  span:after {
     content: "";
     position: absolute;
     bottom: -$size / 10;
@@ -38,10 +36,10 @@ $minDeg: $unitDeg * 3;
       background: nth($colors, $i);
 
       @if $i == 1 {
-        animation: swingL 1.5s ease-in-out alternate infinite;
+        animation: keyframes2a 1.5s ease-in-out alternate infinite;
       } 
       @if $i == length($colors) {
-        animation: swingR 1.5s ease-in-out alternate infinite;
+        animation: keyframes2b 1.5s ease-in-out alternate infinite;
       }
     }
   
@@ -50,7 +48,7 @@ $minDeg: $unitDeg * 3;
     }    
   }  
 
-  @keyframes swingL {
+  @keyframes keyframes2a {
     0% {
       transform: rotate($maxDeg);
     }
@@ -65,7 +63,7 @@ $minDeg: $unitDeg * 3;
     }
   }
 
-  @keyframes swingR {
+  @keyframes keyframes2b {
     0% {
       transform: rotate(-$minDeg);
     }
@@ -80,7 +78,7 @@ $minDeg: $unitDeg * 3;
     }
   }
 
-  @keyframes slight {
+  @keyframes keyframes2c {
     0% {
       transform: rotate(-2deg);
     }

@@ -6,7 +6,7 @@ $size: 4em;
   width: $size;
   height: $size;
 
-  .ball {
+  span {
     position: absolute;
     top:35%;    
     width: $size / 4;
@@ -17,21 +17,15 @@ $size: 4em;
 
   @for $i from 1 through length($colors) {
     :nth-child(#{$i}) {
-      left:($i - 1)*33%;
+      left:($i - 1) * 33%;
       background: nth($colors, $i);
-      animation: keyframes8 2s ease-in-out infinite $i*0.3s;
+      animation: keyframes8a 2s ease-in-out infinite $i * 0.3s;
     } 
   }  
 
-  @keyframes keyframes8 {
-    0% {
-      top: 35%;
-    }
+  @keyframes keyframes8a {    
     50% {
       top: 65%;
-    }
-    100% {
-      top: 35%;
     }
   }
 }
