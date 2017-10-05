@@ -1,6 +1,6 @@
-$colors:rgba(218, 0, 0, .7) rgba(242, 181, 15, .7) rgba(0, 147, 56, .7);
+$colors:rgba(36, 163, 121, 0.7) rgba(225, 20, 98, 0.7) rgba(29, 126, 216, 0.7);
 $size: 3em;
-$thickness:$size * .3;
+$thickness:$size / 3;
 
 .loader6 {
   width: $size;
@@ -21,7 +21,7 @@ $thickness:$size * .3;
     left: 50%;
     transform: translate(-50%, -50%);
     background: nth($colors, 1);
-    animation: redball 4s infinite ease-in-out;
+    animation: keyframes6a 4s infinite ease-in-out;
     z-index: 5;
 
     &:before,
@@ -32,17 +32,17 @@ $thickness:$size * .3;
     &:before {
       z-index: 10;
       background: nth($colors, 2);
-      animation: yellowball 4s infinite ease-in-out;
+      animation: keyframes6b 4s infinite ease-in-out;
     }
 
     &:after {
       z-index: 15;
       background: nth($colors, 3);
-      animation: greenball 4s infinite ease-in-out;
+      animation: keyframes6c 4s infinite ease-in-out;
     }
   }
     
-  @keyframes redball {
+  @keyframes keyframes6a {
     0% {
       left: 50%;
     }
@@ -66,7 +66,7 @@ $thickness:$size * .3;
     }
   }
 
-  @keyframes yellowball {
+  @keyframes keyframes6b {
     0% {
       left: $size * .5;
     }
@@ -90,7 +90,7 @@ $thickness:$size * .3;
     }
   }
 
-  @keyframes greenball {
+  @keyframes keyframes6c {
     0% {
       left: -$size * .5;
     }

@@ -1,14 +1,15 @@
-$colors:rgba(36, 163, 121, 0.7) rgba(255, 176, 17, 0.7) rgba(29, 126, 216, 0.7) rgba(225, 20, 98, 0.7);
+$colors:rgba(255, 176, 17, 0.7) rgba(36, 163, 121, 0.7) rgba(184, 20, 225, 0.7) rgba(29, 126, 216, 0.7) rgba(46, 221, 26, 0.7) rgba(78, 196, 219, 0.7) rgba(225, 20, 98, 0.7);
 $size: 4em;
 
-.loader8 {
+.loader9 {
   position: relative;
   width: $size;
   height: $size;
 
   .ball {
     position: absolute;
-    top:35%;    
+    left: 0;
+    top:50%;    
     width: $size / 4;
     height: $size / 4;
     border-radius: $size / 4;
@@ -17,21 +18,14 @@ $size: 4em;
 
   @for $i from 1 through length($colors) {
     :nth-child(#{$i}) {
-      left:($i - 1)*33%;
       background: nth($colors, $i);
-      animation: keyframes8 2s ease-in-out infinite $i*0.3s;
+      animation: keyframes9 2s ease-in-out infinite $i*0.13s;
     } 
   }  
 
-  @keyframes keyframes8 {
-    0% {
-      top: 35%;
-    }
-    50% {
-      top: 65%;
-    }
-    100% {
-      top: 35%;
+  @keyframes keyframes9 {
+    50%{
+      left:100%;
     }
   }
 }
