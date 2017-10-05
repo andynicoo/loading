@@ -8,7 +8,6 @@
     width: 1em;
     height: 1em;
     border-radius: 1em;
-    transform-origin: 50% -350%;
     transform: translate(-50%, -50%); }
   .loader8 :nth-child(1) {
     left: 0%;
