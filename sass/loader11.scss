@@ -1,0 +1,31 @@
+$colors: rgb(46, 221, 26) rgb(255, 176, 17) rgb(29, 126, 216) rgb(78, 196, 219) rgb(225, 20, 98);
+$size: 4em;
+
+.loader11 {
+  position: relative;
+  width: $size;
+  height: $size;
+
+  span {
+    position: absolute;
+    top:50%;
+    width: $size / 10;
+    height: 0;
+    transform:translate(-50%,-50%);
+  }
+
+  @for $i from 1 through length($colors) {
+    :nth-child(#{$i}) {
+      background: nth($colors, $i);
+      left:5% + $i * 15%;
+      animation: keyframes11a 1s linear infinite $i * 0.15s;
+    }
+  }
+
+  @keyframes keyframes11a {
+    50% {
+      height: $size/2;
+    }
+  } 
+}
+
