@@ -1,0 +1,44 @@
+$colors: rgb(46, 221, 26) rgb(255, 176, 17) rgb(225, 20, 98);
+$size: 6em;
+
+.loader12 {
+  position: relative;
+  width: $size;
+  height: $size;
+  
+  span {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    width: $size / 2;
+    height: $size / 2;
+    &:before{
+      content: '';
+      position: absolute;
+      width: $size / 2;
+      height: $size / 2;
+      border-radius:50%;
+      top:0;
+      left:0;
+      animation:keyframes12a 1.5s linear infinite;
+    }
+  }
+
+  @for $i from 1 through length($colors) {
+    :nth-child(#{$i}) {
+      transform:translate(-50%,-50%) rotate(120deg * $i);
+      &:before{
+        border-top:solid 3px nth($colors, $i);
+      }
+    }
+  }
+
+  @keyframes keyframes12a {
+    0%{
+      transform:rotateX(45deg) rotateY(-45deg) rotateZ(0);
+    }
+    100% {
+      transform:rotateX(45deg) rotateY(-45deg) rotateZ(360deg);
+    }
+  } 
+}

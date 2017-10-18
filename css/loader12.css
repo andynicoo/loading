@@ -1,0 +1,37 @@
+.loader12 {
+  position: relative;
+  width: 6em;
+  height: 6em; }
+  .loader12 span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3em;
+    height: 3em; }
+    .loader12 span:before {
+      content: '';
+      position: absolute;
+      width: 3em;
+      height: 3em;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+      animation: keyframes12a 1.5s linear infinite; }
+  .loader12 :nth-child(1) {
+    transform: translate(-50%, -50%) rotate(120deg); }
+    .loader12 :nth-child(1):before {
+      border-top: solid 3px #2edd1a; }
+  .loader12 :nth-child(2) {
+    transform: translate(-50%, -50%) rotate(240deg); }
+    .loader12 :nth-child(2):before {
+      border-top: solid 3px #ffb011; }
+  .loader12 :nth-child(3) {
+    transform: translate(-50%, -50%) rotate(360deg); }
+    .loader12 :nth-child(3):before {
+      border-top: solid 3px #e11462; }
+
+@keyframes keyframes12a {
+  0% {
+    transform: rotateX(45deg) rotateY(-45deg) rotateZ(0); }
+  100% {
+    transform: rotateX(45deg) rotateY(-45deg) rotateZ(360deg); } }
