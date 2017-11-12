@@ -1,0 +1,59 @@
+$colors:rgba(36, 163, 121, .5) rgba(255, 176, 17, .5) rgba(29, 126, 216, .5)  rgba(225, 20, 95, .5);
+$size: 5em;
+$length: $size * .6;
+$distance: $size - $length;
+
+.loader13 {
+  position: relative;
+  width: $size;
+  height: $size;
+  
+  span {
+    position: absolute;
+    top:0;
+    left:0;
+    width: $size;
+    height: $size;
+    &:before{
+      content: '';
+      position: absolute;
+      top:0;
+      left:0;
+      width: $length;
+      height: $length;
+    }
+  }
+
+  @for $i from 1 through length($colors) {
+    :nth-child(#{$i}) {
+      transform:rotate(90deg * $i);
+      &:before{
+        background: nth($colors, $i);
+        animation: keyframes13a 3s infinite linear;
+      }
+    }
+  }
+
+  @keyframes keyframes13a {
+    0%{
+      left: 0;
+      top:0;
+    }
+    25%{
+      left: $distance;
+      top:0;
+    }
+    50%{
+      left: $distance;
+      top: $distance;
+    }
+    75%{
+      left: 0;
+      top: $distance;
+    }
+    100% {
+      left: 0;
+      top: 0;
+    }
+  } 
+}

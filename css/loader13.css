@@ -1,0 +1,54 @@
+.loader13 {
+  position: relative;
+  width: 5em;
+  height: 5em; }
+  .loader13 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5em;
+    height: 5em; }
+    .loader13 span:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3em;
+      height: 3em; }
+  .loader13 :nth-child(1) {
+    transform: rotate(90deg); }
+    .loader13 :nth-child(1):before {
+      background: rgba(36, 163, 121, 0.5);
+      animation: keyframes13a 3s infinite linear; }
+  .loader13 :nth-child(2) {
+    transform: rotate(180deg); }
+    .loader13 :nth-child(2):before {
+      background: rgba(255, 176, 17, 0.5);
+      animation: keyframes13a 3s infinite linear; }
+  .loader13 :nth-child(3) {
+    transform: rotate(270deg); }
+    .loader13 :nth-child(3):before {
+      background: rgba(29, 126, 216, 0.5);
+      animation: keyframes13a 3s infinite linear; }
+  .loader13 :nth-child(4) {
+    transform: rotate(360deg); }
+    .loader13 :nth-child(4):before {
+      background: rgba(225, 20, 95, 0.5);
+      animation: keyframes13a 3s infinite linear; }
+
+@keyframes keyframes13a {
+  0% {
+    left: 0;
+    top: 0; }
+  25% {
+    left: 2em;
+    top: 0; }
+  50% {
+    left: 2em;
+    top: 2em; }
+  75% {
+    left: 0;
+    top: 2em; }
+  100% {
+    left: 0;
+    top: 0; } }
