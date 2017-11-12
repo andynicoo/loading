@@ -10,8 +10,6 @@ $distance: $size - $length;
   
   span {
     position: absolute;
-    top:0;
-    left:0;
     width: $size;
     height: $size;
     &:before{
@@ -35,10 +33,6 @@ $distance: $size - $length;
   }
 
   @keyframes keyframes13a {
-    0%{
-      left: 0;
-      top:0;
-    }
     25%{
       left: $distance;
       top:0;
@@ -50,10 +44,6 @@ $distance: $size - $length;
     75%{
       left: 0;
       top: $distance;
-    }
-    100% {
-      left: 0;
-      top: 0;
     }
   } 
 }
