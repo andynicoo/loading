@@ -1,12 +1,1 @@
-body, ul, p, select {
-  margin: 0;
-  padding: 0; }
-
-li {
-  list-style: none; }
-
-body {
-  background: #333;
-  color: #fff;
-  max-width: 1024px;
-  margin: 0 auto; }
+body,p,select,ul{margin:0;padding:0}li{list-style:none}body{background:#333;color:#fff;max-width:1024px;margin:0 auto}
