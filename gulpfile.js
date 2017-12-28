@@ -20,11 +20,11 @@ gulp.task('connect', function() {
 gulp.task('watch',function(){
     watch(['./**/*.scss'],function(e){
 		gulp.src(e.path)
-		.on('error', function(err){console.log(err.message);})
+		//.on('error', function(err){console.log(err.message);})
 		.on('end', function(){ console.log('[' + (new Date()).toString().match(/\d{2}:\d{2}:\d{2}/) + '] ' + e.path) })
-		.pipe(sass())
+		.pipe(sass().on('error',sass.logError))
 		.pipe(autoprefixer())
-		.pipe(cleanCss({rebase:false}))
+		//.pipe(cleanCss({rebase:false}))
 		.pipe(gulp.dest('./css'))
 		.pipe(connect.reload())
 	})
