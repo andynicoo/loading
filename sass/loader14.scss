@@ -24,11 +24,11 @@ $thickness: $size * .2;
   @for $i from 1 through length($colors) {
     :nth-child(#{$i}) {
         left: ($i - 1) * 33.3%;
-        animation: keyframes14a 1.5s infinite $i * 0.1s linear;
+        animation: keyframes14a 1.5s infinite $i * 0.2s linear;
         transform: translate(-50%,-50%);
         &:before{
           background: nth($colors, $i);
-          animation: keyframes14b 4s infinite $i * 0.85s linear;
+          animation: keyframes14b 4s infinite $i * 0.8s linear;
         }
     }
   }

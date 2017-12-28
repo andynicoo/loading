@@ -15,54 +15,54 @@
       border-radius: 50%; }
   .loader14 :nth-child(1) {
     left: 0%;
-    -webkit-animation: keyframes14a 1.5s infinite 0.1s linear;
-            animation: keyframes14a 1.5s infinite 0.1s linear;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); }
-    .loader14 :nth-child(1):before {
-      background: #24a379;
-      -webkit-animation: keyframes14b 4s infinite 0.85s linear;
-              animation: keyframes14b 4s infinite 0.85s linear; }
-  .loader14 :nth-child(2) {
-    left: 33.3%;
     -webkit-animation: keyframes14a 1.5s infinite 0.2s linear;
             animation: keyframes14a 1.5s infinite 0.2s linear;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
-    .loader14 :nth-child(2):before {
-      background: #ffb011;
-      -webkit-animation: keyframes14b 4s infinite 1.7s linear;
-              animation: keyframes14b 4s infinite 1.7s linear; }
-  .loader14 :nth-child(3) {
-    left: 66.6%;
-    -webkit-animation: keyframes14a 1.5s infinite 0.3s linear;
-            animation: keyframes14a 1.5s infinite 0.3s linear;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); }
-    .loader14 :nth-child(3):before {
-      background: #1d7ed8;
-      -webkit-animation: keyframes14b 4s infinite 2.55s linear;
-              animation: keyframes14b 4s infinite 2.55s linear; }
-  .loader14 :nth-child(4) {
-    left: 99.9%;
+    .loader14 :nth-child(1):before {
+      background: #24a379;
+      -webkit-animation: keyframes14b 4s infinite 0.8s linear;
+              animation: keyframes14b 4s infinite 0.8s linear; }
+  .loader14 :nth-child(2) {
+    left: 33.3%;
     -webkit-animation: keyframes14a 1.5s infinite 0.4s linear;
             animation: keyframes14a 1.5s infinite 0.4s linear;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
+    .loader14 :nth-child(2):before {
+      background: #ffb011;
+      -webkit-animation: keyframes14b 4s infinite 1.6s linear;
+              animation: keyframes14b 4s infinite 1.6s linear; }
+  .loader14 :nth-child(3) {
+    left: 66.6%;
+    -webkit-animation: keyframes14a 1.5s infinite 0.6s linear;
+            animation: keyframes14a 1.5s infinite 0.6s linear;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+    .loader14 :nth-child(3):before {
+      background: #1d7ed8;
+      -webkit-animation: keyframes14b 4s infinite 2.4s linear;
+              animation: keyframes14b 4s infinite 2.4s linear; }
+  .loader14 :nth-child(4) {
+    left: 99.9%;
+    -webkit-animation: keyframes14a 1.5s infinite 0.8s linear;
+            animation: keyframes14a 1.5s infinite 0.8s linear;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
     .loader14 :nth-child(4):before {
       background: #e1145f;
-      -webkit-animation: keyframes14b 4s infinite 3.4s linear;
-              animation: keyframes14b 4s infinite 3.4s linear; }
+      -webkit-animation: keyframes14b 4s infinite 3.2s linear;
+              animation: keyframes14b 4s infinite 3.2s linear; }
   .loader14 :nth-child(5) {
     left: 133.2%;
-    -webkit-animation: keyframes14a 1.5s infinite 0.5s linear;
-            animation: keyframes14a 1.5s infinite 0.5s linear;
+    -webkit-animation: keyframes14a 1.5s infinite 1s linear;
+            animation: keyframes14a 1.5s infinite 1s linear;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
     .loader14 :nth-child(5):before {
       background: #24a379;
-      -webkit-animation: keyframes14b 4s infinite 4.25s linear;
-              animation: keyframes14b 4s infinite 4.25s linear; }
+      -webkit-animation: keyframes14b 4s infinite 4s linear;
+              animation: keyframes14b 4s infinite 4s linear; }
 
 @-webkit-keyframes keyframes14a {
   50% {
