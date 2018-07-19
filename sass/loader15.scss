@@ -1,0 +1,23 @@
+$colors: rgb(255, 176, 17) rgb(225, 20, 95) rgb(255, 176, 17);
+$size: 5em;
+
+.loader15 {
+  width: $size;
+  height: $size;
+  background: nth($colors, 1);
+  animation: keyframes15a 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  
+  @keyframes keyframes15a {
+    @for $i from 1 through length($colors){
+      #{($i - 1)*50}%{
+        transform: rotateZ(($i - 1) * 1800deg);
+        background: nth($colors, $i);
+        @if ($i == 2) {
+          animation-timing-function: cubic-bezier(0, 0.5, 0.5 , 1);
+        }@else{
+          animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+        }
+      }
+    }
+  } 
+}

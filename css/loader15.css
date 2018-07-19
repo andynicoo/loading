@@ -1,0 +1,46 @@
+.loader15 {
+  width: 5em;
+  height: 5em;
+  background: #ffb011;
+  -webkit-animation: keyframes15a 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+          animation: keyframes15a 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite; }
+
+@-webkit-keyframes keyframes15a {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+    background: #ffb011;
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5); }
+  50% {
+    -webkit-transform: rotateZ(1800deg);
+            transform: rotateZ(1800deg);
+    background: #e1145f;
+    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1); }
+  100% {
+    -webkit-transform: rotateZ(3600deg);
+            transform: rotateZ(3600deg);
+    background: #ffb011;
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5); } }
+
+@keyframes keyframes15a {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+    background: #ffb011;
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5); }
+  50% {
+    -webkit-transform: rotateZ(1800deg);
+            transform: rotateZ(1800deg);
+    background: #e1145f;
+    -webkit-animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+            animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1); }
+  100% {
+    -webkit-transform: rotateZ(3600deg);
+            transform: rotateZ(3600deg);
+    background: #ffb011;
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+            animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5); } }
