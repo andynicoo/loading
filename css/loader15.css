@@ -1,9 +1,9 @@
 .loader15 {
-  width: 5em;
-  height: 5em;
+  width: 4em;
+  height: 4em;
   background: #ffb011;
-  -webkit-animation: keyframes15a 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-          animation: keyframes15a 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite; }
+  -webkit-animation: keyframes15a 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+          animation: keyframes15a 2s cubic-bezier(0, 0.2, 0.8, 1) infinite; }
 
 @-webkit-keyframes keyframes15a {
   0% {
