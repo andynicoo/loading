@@ -1,0 +1,46 @@
+$size: 4em;
+
+.loader18 {
+  width: $size;
+  height: $size;
+  display: flex;
+  flex-wrap: wrap;
+  span{
+    width: 33%;
+    height: 33%;
+    background: #fff;
+    animation:keyframes18a 1.3s infinite ease-in-out;
+  }
+  
+  :nth-child(2),
+  :nth-child(4){
+    animation-delay: 0.2s
+  }
+
+  :nth-child(3),
+  :nth-child(5),
+  :nth-child(7),{
+    animation-delay: 0.4s
+  }
+
+  :nth-child(6),
+  :nth-child(8){
+    animation-delay: 0.6s
+  }
+
+  :nth-child(9){
+    animation-delay: 0.8s
+  }
+
+  @keyframes keyframes18a {
+    0%, 66%, 99% {
+        -webkit-transform: scale3D(1, 1, 1);
+        transform: scale3D(1, 1, 1)
+    }
+
+    33% {
+        -webkit-transform: scale3D(0, 0, 1);
+        transform: scale3D(0, 0, 1)
+    }
+  } 
+}
