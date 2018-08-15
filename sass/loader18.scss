@@ -1,5 +1,4 @@
 $size: 4em;
-
 .loader18 {
   width: $size;
   height: $size;
@@ -34,12 +33,10 @@ $size: 4em;
 
   @keyframes keyframes18a {
     0%, 66%, 99% {
-        -webkit-transform: scale3D(1, 1, 1);
         transform: scale3D(1, 1, 1)
     }
 
     33% {
-        -webkit-transform: scale3D(0, 0, 1);
         transform: scale3D(0, 0, 1)
     }
   } 
