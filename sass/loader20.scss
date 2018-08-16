@@ -1,0 +1,82 @@
+$size: 5rem;
+.loader20 {
+  width: $size;
+  height: $size;
+  position: relative;
+  div{
+    position: absolute;
+    border-radius: 50%;
+    background: #fff;
+    span,
+    &::before{
+      position: absolute;
+      overflow: hidden;
+      background: #fff;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    &::before{
+      content:'';
+      background: #222;
+      z-index: 5;
+      border-radius: 50%;
+    }
+  }
+  >:nth-child(1){
+    width: $size * .6;
+    height: $size * .6;
+    left:0;
+    top:0;
+    animation: keyframes20a 5s linear infinite;
+    &::before{
+      width: $size * .4;
+      height: $size * .4;
+    }
+    span{
+      width:$size * .75;
+      height: $size * .08;
+    }
+
+    @for $i from 2 through 6 {
+      :nth-child(#{$i}) {
+        transform: translate(-50%,-50%) rotate(30deg * ($i - 1));
+      }
+    }
+  }
+  >:nth-child(2){
+    width: $size * .3;
+    height: $size * .3;
+    bottom: $size * .17;
+    right: $size * .17;
+    transform: rotate(45deg);
+    animation: keyframes20b 2.5s linear infinite reverse;
+    &::before{
+      width: $size * .15;
+      height: $size * .15;
+    }
+    span{
+      width:$size * .45;
+      height: $size * .08;
+    }
+    @for $i from 2 through 3 {
+      :nth-child(#{$i}) {
+        transform: translate(-50%,-50%) rotate(60deg * ($i - 1));
+      }
+    }
+  }
+
+  @keyframes keyframes20a {
+    100% {
+      transform:rotate(360deg);
+    }
+  } 
+  @keyframes keyframes20b {
+    0%{
+      transform:rotate(45deg);
+    }
+    100% {
+      transform:rotate(45deg + 360deg);
+    }
+  } 
+}

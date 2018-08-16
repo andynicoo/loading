@@ -1,0 +1,95 @@
+.loader20 {
+  width: 5rem;
+  height: 5rem;
+  position: relative; }
+  .loader20 div {
+    position: absolute;
+    border-radius: 50%;
+    background: #fff; }
+    .loader20 div span, .loader20 div::before {
+      position: absolute;
+      overflow: hidden;
+      background: #fff;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); }
+    .loader20 div::before {
+      content: '';
+      background: #222;
+      z-index: 5;
+      border-radius: 50%; }
+  .loader20 > :nth-child(1) {
+    width: 3rem;
+    height: 3rem;
+    left: 0;
+    top: 0;
+    -webkit-animation: keyframes20a 5s linear infinite;
+            animation: keyframes20a 5s linear infinite; }
+    .loader20 > :nth-child(1)::before {
+      width: 2rem;
+      height: 2rem; }
+    .loader20 > :nth-child(1) span {
+      width: 3.75rem;
+      height: 0.4rem; }
+    .loader20 > :nth-child(1) :nth-child(2) {
+      -webkit-transform: translate(-50%, -50%) rotate(30deg);
+              transform: translate(-50%, -50%) rotate(30deg); }
+    .loader20 > :nth-child(1) :nth-child(3) {
+      -webkit-transform: translate(-50%, -50%) rotate(60deg);
+              transform: translate(-50%, -50%) rotate(60deg); }
+    .loader20 > :nth-child(1) :nth-child(4) {
+      -webkit-transform: translate(-50%, -50%) rotate(90deg);
+              transform: translate(-50%, -50%) rotate(90deg); }
+    .loader20 > :nth-child(1) :nth-child(5) {
+      -webkit-transform: translate(-50%, -50%) rotate(120deg);
+              transform: translate(-50%, -50%) rotate(120deg); }
+    .loader20 > :nth-child(1) :nth-child(6) {
+      -webkit-transform: translate(-50%, -50%) rotate(150deg);
+              transform: translate(-50%, -50%) rotate(150deg); }
+  .loader20 > :nth-child(2) {
+    width: 1.5rem;
+    height: 1.5rem;
+    bottom: 0.85rem;
+    right: 0.85rem;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    animation: keyframes20b 2.5s linear infinite reverse; }
+    .loader20 > :nth-child(2)::before {
+      width: 0.75rem;
+      height: 0.75rem; }
+    .loader20 > :nth-child(2) span {
+      width: 2.25rem;
+      height: 0.4rem; }
+    .loader20 > :nth-child(2) :nth-child(2) {
+      -webkit-transform: translate(-50%, -50%) rotate(60deg);
+              transform: translate(-50%, -50%) rotate(60deg); }
+    .loader20 > :nth-child(2) :nth-child(3) {
+      -webkit-transform: translate(-50%, -50%) rotate(120deg);
+              transform: translate(-50%, -50%) rotate(120deg); }
+
+@-webkit-keyframes keyframes20a {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes keyframes20a {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@-webkit-keyframes keyframes20b {
+  0% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+  100% {
+    -webkit-transform: rotate(405deg);
+            transform: rotate(405deg); } }
+
+@keyframes keyframes20b {
+  0% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+  100% {
+    -webkit-transform: rotate(405deg);
+            transform: rotate(405deg); } }
