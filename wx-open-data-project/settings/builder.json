@@ -1,0 +1,48 @@
+{
+  "encryptJs": true,
+  "excludeScenes": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": true,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.wx-sub-test",
+  "qqplay": {
+    "orientation": "portrait"
+  },
+  "startScene": "088db947-d2bf-4c47-b64f-f30bc4bc0faa",
+  "title": "wx-open-data-project",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx6ac3f5090a6b99c5",
+    "buildsub": true,
+    "hasSubdomain": true,
+    "isSubdomain": true,
+    "orientation": "landscape"
+  },
+  "xxteaKey": "0f6c60db-2545-4d",
+  "zipCompressJs": true,
+  "includeAnySDK": false,
+  "oauthLoginServer": "",
+  "appKey": "",
+  "appSecret": "",
+  "privateKey": "",
+  "jailbreakPlatform": false,
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "pathPattern": "",
+    "scheme": "https",
+    "host": "",
+    "skipRecord": false,
+    "recordPath": ""
+  }
+}

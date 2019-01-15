@@ -1,2 +1,8 @@
 
 node_modules/
+
+**/library/
+**/temp/
+**/local/
+**/build/
+**/gulp/
