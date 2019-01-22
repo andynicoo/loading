@@ -55,4 +55,37 @@ module.exports = {
     setRankTab: function(val){
         this.rankTab = val;
     },
+    getWXFunction(name) {
+        if(typeof(wx) == 'undefined' || wx == null) {
+            return null;
+        }
+        return wx[name];
+    },
+    //固定广告代码
+    showBannerAd() {
+        var wxFunc = this.getWXFunction('createBannerAd');
+        if(typeof(wxFunc) != 'undefined' && wxFunc != null) {
+            var phone = wx.getSystemInfoSync();
+            var w = phone.screenWidth / 2;
+            var h = phone.screenHeight;
+            // adunit-af61e6bc454ac540
+            // adunit-fdd4022210bafac3
+            let bannerAd = wxFunc({
+                adUnitId: 'adunit-6cd8e695db2b2708',
+                style: {
+                    width: 100,
+                    top: 0,
+                    left: 0
+                }
+            });
+            bannerAd.onResize(function() {
+                bannerAd.style.left = w - bannerAd.style.realWidth / 2 + 0.1;
+                bannerAd.style.top = h - bannerAd.style.realHeight + 0.1;
+            })
+            bannerAd.show();
+            return bannerAd;
+        } else {
+            return;
+        }
+    }
 };

@@ -1,5 +1,6 @@
 //游戏结束弹窗控制类
 var score = require("./score");
+var common = require("./../../script/common");
 cc.Class({
     extends: cc.Component,
     properties: {
@@ -40,13 +41,14 @@ cc.Class({
         this.pathPosition.push(cc.v2(0, 50));
         this.pathPosition.push(cc.v2(0, 0));
         this.mask.runAction(cc.fadeTo(0.3, 180));
+        common.bannerAd = common.showBannerAd();
         this.restartBtn.node.runAction(cc.repeatForever(cc.sequence(
             cc.scaleTo(0.5, 1.2).easing(cc.easeBackOut()),
             cc.scaleTo(0.5, 1).easing(cc.easeBackIn())
         )));
         this.popBox.runAction(cc.sequence(
             cc.cardinalSplineTo(1.5, this.pathPosition, 0.9).easing(cc.easeQuinticActionOut()),
-            cc.callFunc(() => { })
+            cc.callFunc(() => {})
         ));
     },
     //重开游戏
@@ -54,6 +56,7 @@ cc.Class({
         if (this.running) {
             return;
         }
+        common.bannerAd.hide();
         this.running = true;
         let pathPos = this.pathPosition.slice(0).reverse();
         this.mask.runAction(cc.sequence(

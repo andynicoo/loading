@@ -101,6 +101,9 @@ cc.Class({
             let score = this.mainCamera.getChildByName("score");
             let widget = score.getComponent(cc.Widget);
             widget.top = 60;
+            let setting = this.mainCamera.getChildByName("setting");
+            let sWidget = setting.getComponent(cc.Widget);
+            sWidget.top = 290;
         }
     },
     //触摸开始

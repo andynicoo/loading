@@ -27,6 +27,9 @@ cc.Class({
         this.btns[4].node.on('click',this.playGame,this);
         this.btns[5].node.on('click',this.oneHandplay,this);
         //this.code.on(cc.Node.EventType.TOUCH_START,this.codePreview,this);
+        if(common.bannerAd){
+            common.bannerAd.hide();
+        }
     },
     start() {
         let _self = this;
@@ -49,12 +52,15 @@ cc.Class({
 
         //重置模式
         common.oneHandStatus = false;
-        let favoritePosX = this.favorite.position.x;
-        let favoritePosY = this.favorite.position.y;
-        this.favorite.runAction(cc.repeatForever(cc.sequence(
-            cc.moveTo(0.5, cc.v2(favoritePosX+10,favoritePosY)).easing(cc.easeBackOut()),
-            cc.moveTo(0.5, cc.v2(favoritePosX,favoritePosY)).easing(cc.easeBackIn())
-        )))
+        let canvasSize = cc.view.getCanvasSize();
+        if(canvasSize.height !== 1624){
+            let favoritePosX = this.favorite.position.x;
+            let favoritePosY = this.favorite.position.y;
+            this.favorite.runAction(cc.repeatForever(cc.sequence(
+                cc.moveTo(0.5, cc.v2(favoritePosX+10,favoritePosY)).easing(cc.easeBackOut()),
+                cc.moveTo(0.5, cc.v2(favoritePosX,favoritePosY)).easing(cc.easeBackIn())
+            )))
+        }
     },
 
     //预览二维码
@@ -139,6 +145,11 @@ cc.Class({
         if (canvasSize.width >= defaultWidth) {
             this.mainCamera.height = canvasSize.height / (canvasSize.width / defaultWidth);
             this.mainCamera.width = defaultWidth;
+        }
+        if (canvasSize.height == 1624) {
+            let favorite = this.mainCamera.getChildByName("favorite");
+            let widget = favorite.getComponent(cc.Widget);
+            widget.top = 70;
         }
     },
     //记录所有button的位置

@@ -1,3 +1,4 @@
+var common = require("./../../script/common");
 //游戏界面设置控制类
 cc.Class({
     extends: cc.Component,
@@ -35,6 +36,7 @@ cc.Class({
     },
     //继续
     goOn() {
+        common.bannerAd.hide();
         this.pauseStatus = false;
         this.node.main.goOn();
         this.btnsReverse = this.btns.slice(0).reverse();
@@ -77,6 +79,7 @@ cc.Class({
     },
     //显示所有按钮、遮罩层
     show() {
+        common.bannerAd = common.showBannerAd();
         let delay = 100;
         for (let i in this.btns) {
             let node = this.btns[i].node;

@@ -26,6 +26,7 @@ cc.Class({
             this.dispaly.getComponent(cc.WXSubContextView).updateSubContextViewport();
             //this.dispaly.getComponent(cc.WXSubContextView).enabled = false;
         }
+        
     },
     //显示弹窗
     showPopBox() {
@@ -35,9 +36,10 @@ cc.Class({
         this.pathPosition.push(cc.v2(0, 50));
         this.pathPosition.push(cc.v2(0, 0));
         this.mask.runAction(cc.fadeTo(0.3, 180));
+        common.bannerAd = common.showBannerAd();
         this.popBox.runAction(cc.sequence(
             cc.cardinalSplineTo(1.5, this.pathPosition, 0.9).easing(cc.easeQuinticActionOut()),
-            cc.callFunc(() => { 
+            cc.callFunc(() => {
                 //开启子域视图刷新
                 if (this.isRankPopBox()) {
                     this.dispaly.getComponent(cc.WXSubContextView).enabled = true;
@@ -76,6 +78,7 @@ cc.Class({
     },
     //关闭弹窗
     hidePopBox() {
+        common.bannerAd.hide();
         //禁用子域视图刷新
         if (this.isRankPopBox()) {
             let openDataContext = wx.getOpenDataContext();

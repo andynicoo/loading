@@ -1,4 +1,5 @@
 
+var common = require("./../../script/common");
 //游戏开始时弹窗控制类
 cc.Class({
     extends: cc.Component,
@@ -38,6 +39,7 @@ cc.Class({
         this.pathPosition.push(cc.v2(0, 50));
         this.pathPosition.push(cc.v2(0, 0));
         this.mask.runAction(cc.fadeTo(0.3, 180));
+        common.bannerAd = common.showBannerAd();
         this.popBox.runAction(cc.sequence(
             cc.cardinalSplineTo(1.5, this.pathPosition, 0.9).easing(cc.easeQuinticActionOut()),
             cc.callFunc(() => { })
@@ -48,6 +50,7 @@ cc.Class({
         if (this.running) {
             return;
         }
+        common.bannerAd.hide();
         this.running = true;
         let pathPos = this.pathPosition.slice(0).reverse();
         this.mask.runAction(cc.fadeTo(0.3, 0));
