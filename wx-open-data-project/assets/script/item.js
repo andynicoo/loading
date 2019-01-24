@@ -20,11 +20,13 @@ cc.Class({
         userName.string = nickName;
         score.string = user.score.toString().replace(/(\d{1,3})(?=(\d{3})+$)/g,'$1,');
         rank.string = (parseInt(i)+1).toString();
-        cc.loader.load({
-            url: avatarUrl, type: 'png'
-        }, (err, texture) => {
-            if (err) console.error(err);
-            userIcon.spriteFrame = new cc.SpriteFrame(texture);
-        });
+        if(avatarUrl){
+            cc.loader.load({
+                url: avatarUrl, type: 'png'
+            }, (err, texture) => {
+                if (err) console.error(err);
+                userIcon.spriteFrame = new cc.SpriteFrame(texture);
+            });
+        }
     }
 });

@@ -29,8 +29,8 @@ cc.Class({
         wx.getStorage({
             key: 'highScore',
             success (res) {
-                console.log("显示游戏结束弹窗" + res.data + typeof(res.data))
-                _seft.highScoreLabel.string = res.data.toString().replace(/(\d{1,3})(?=(\d{3})+$)/g, '$1,');
+                console.log("显示游戏结束弹窗" + res.data.split('-')[0] + typeof(res.data))
+                _seft.highScoreLabel.string = res.data.split('-')[0].replace(/(\d{1,3})(?=(\d{3})+$)/g, '$1,');
             }
         })
         //游戏结束计分牌

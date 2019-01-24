@@ -11,6 +11,7 @@ cc.Class({
         audio: cc.Node,
         friendBtn: cc.Button,
         worldBtn: cc.Button,
+        todayBtn: cc.Button,
         msgboxs:{
             type: cc.Node,
             default: []
@@ -39,20 +40,18 @@ cc.Class({
         if (!common.openId) {
             _self.getOriginOpenId();
         }
-        //动作列表
-        _self.dur = 0.2;
-        _self.actions = {
-            1: cc.scaleTo(_self.dur, 0.9, 0.9),
-            2: cc.scaleTo(_self.dur, 0.76, 0.76)
-        };
-
+        
         for(let i in _self.msgboxs){
             _self.msgboxs[i].main = this;
         }
 
         //重置模式
         common.oneHandStatus = false;
+    },
+    //显示“添加到我的小程序
+    showFavorite(){
         let canvasSize = cc.view.getCanvasSize();
+        this.favorite.opacity = 200;
         if(canvasSize.height !== 1624){
             let favoritePosX = this.favorite.position.x;
             let favoritePosY = this.favorite.position.y;
@@ -62,7 +61,6 @@ cc.Class({
             )))
         }
     },
-
     //预览二维码
     codePreview(){
         wx.previewImage({
@@ -81,22 +79,6 @@ cc.Class({
     oneHandplay(){
         common.oneHandStatus = true;
         this.playGame();
-    },
-
-    //查询
-    getOpenIdList() {
-        wx.request({
-            url: "https://www.super-cell.club/weapp/score/queryRecord",
-            method: "POST",
-            success: function (res) {
-                var openDataContext = wx.getOpenDataContext();
-                openDataContext.postMessage({
-                    data: JSON.stringify(res.data),
-                    type: "2",
-                    openId: common.openId
-                });
-            }
-        })
     },
 
     //获取本地openId
@@ -192,44 +174,65 @@ cc.Class({
             delay += 100;
         }
     },
-    //切换
-    toPostMessage(e,msg){
-        if(msg == 1){
-            this.worldBtn.node.stopAllActions();
-            this.friendBtn.node.runAction(this.actions[1]);
-            this.worldBtn.node.runAction(this.actions[2]);
-            let openDataContext = wx.getOpenDataContext();
-            if(!common.fRankStatus){
-                common.setFRankStatus(true);
-                common.setRankTab("1");
+    //查询总榜分数列表传给子域
+    getOpenIdList() {
+        wx.request({
+            url: "https://www.super-cell.club/weapp/score/queryRecord",
+            method: "POST",
+            success: function (res) {
+                var openDataContext = wx.getOpenDataContext();
                 openDataContext.postMessage({
-                    type: 1,
+                    data: JSON.stringify(res.data),
+                    type: 2,
                     openId: common.openId
                 });
-            }else{
-                common.setRankTab("3");
+            }
+        })
+    },
+    //查询今日榜分数列表传给子域
+    getOpenIdListToday() {
+        wx.request({
+            url: "https://www.super-cell.club/weapp/score/queryRecordToday",
+            method: "POST",
+            success: function (res) {
+                var openDataContext = wx.getOpenDataContext();
                 openDataContext.postMessage({
+                    data: JSON.stringify(res.data),
                     type: 3,
                     openId: common.openId
                 });
             }
+        })
+    },
+    setRankBtnStatus(type,btn1,btn2,btn3){
+        let action1 = cc.scaleTo(0.2, 0.9, 0.9);
+        let action2 = cc.scaleTo(0.2, 0.76, 0.76);
+        let action3 = cc.scaleTo(0.2, 0.76, 0.76);
+        common.setRankTab(type);
+        btn1.interactable = false;
+        btn1.node.runAction(action1);
+        btn2.interactable = true;
+        btn2.node.runAction(action2);
+        btn3.interactable = true;
+        btn3.node.runAction(action3);
+    },
+    //排名按钮切换
+    toPostMessage(e,msg){
+        let openDataContext = wx.getOpenDataContext();
+        if(msg == 1){
+            this.setRankBtnStatus(1,this.friendBtn,this.worldBtn,this.todayBtn);
+            openDataContext.postMessage({
+                type: 1,
+                openId: common.openId
+            });
         }
         if(msg == 2){
-            this.friendBtn.node.stopAllActions();
-            this.friendBtn.node.runAction(this.actions[2]);
-            this.worldBtn.node.runAction(this.actions[1]);
-            if(!common.wRankStatus){
-                common.setRankTab("2");
-                common.setWRankStatus(true);
-                this.getOpenIdList();
-            }else{
-                let openDataContext = wx.getOpenDataContext();
-                common.setRankTab("4");
-                openDataContext.postMessage({
-                    type: 4,
-                    openId: common.openId
-                });
-            }
+            this.setRankBtnStatus(2,this.worldBtn,this.friendBtn,this.todayBtn);
+            this.getOpenIdList();
+        }
+        if(msg == 3){
+            this.setRankBtnStatus(3,this.todayBtn,this.friendBtn,this.worldBtn);
+            this.getOpenIdListToday();
         }
     },
     //显示游戏圈按钮和poptips
@@ -248,5 +251,6 @@ cc.Class({
         })
         this.gameClubButton.show();
         this.popTip.getComponent('popTips').init();
+        this.showFavorite();
     }
 });

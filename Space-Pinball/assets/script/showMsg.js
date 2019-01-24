@@ -44,33 +44,10 @@ cc.Class({
                 if (this.isRankPopBox()) {
                     this.dispaly.getComponent(cc.WXSubContextView).enabled = true;
                     this.dispaly.getComponent(cc.WXSubContextView).updateSubContextViewport();
-                    if(common.rankTab == "2"){
-                        this.getOpenIdList();
-                    }else{
-                        let openDataContext = wx.getOpenDataContext();
-                        openDataContext.postMessage({
-                            type: common.rankTab,
-                            openId: common.openId
-                        });
-                    }
-                    
+                    this.node.main.toPostMessage('',common.rankTab);
                 }
             })
         ))
-    },
-    getOpenIdList() {
-        wx.request({
-            url: "https://www.super-cell.club/weapp/score/queryRecord",
-            method: "POST",
-            success: function (res) {
-                var openDataContext = wx.getOpenDataContext();
-                openDataContext.postMessage({
-                    data: JSON.stringify(res.data),
-                    type: "2",
-                    openId: common.openId
-                });
-            }
-        })
     },
     //判断是不是排行榜弹窗
     isRankPopBox() {
@@ -85,14 +62,6 @@ cc.Class({
             openDataContext.postMessage({
                 type: 100
             });
-            if(common.rankTab == "3"){
-                common.rankTab = "1"
-            }
-            if(common.rankTab == "4"){
-                common.rankTab = "2"
-            }
-            common.setWRankStatus(false);
-            common.setFRankStatus(false);
             this.dispaly.getComponent(cc.WXSubContextView).enabled = false;
         }
         if (this.running) {

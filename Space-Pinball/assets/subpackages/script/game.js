@@ -83,8 +83,15 @@ cc.Class({
         wx.getStorage({
             key: 'highScore',
             success(res) {
-                _self.storageScore = res.data;
-                console.log('游戏结束，第一次获取本地缓存的分数' + res.data);
+                if(typeof res.data == 'number'){
+                    res.data = res.data.toString();
+                }
+                if(res.data.indexOf('-') == -1){
+                    return;
+                }
+                _self.storageScore = res.data.split('-')[0];
+                _self.storageTime = res.data.split('-')[1];
+                console.log('游戏结束，第一次获取本地缓存的分数数据' + res.data);
             }
         })
     },
@@ -248,13 +255,13 @@ cc.Class({
     gameOver() {
         //本地存储一次分数
         let curScore = score.getScore();
-
+        let _weekhm = 7 * 24 * 3600 * 1000;
         //当前得分大于缓存得分则覆盖
-        if (curScore > this.storageScore) {
+        if (!this.storageTime || (parseInt(new Date().getTime() - parseInt(this.storageTime)) > _weekhm ) || (curScore > this.storageScore))  {
             console.log('当前得分：' + curScore, typeof (curScore) + ',本地缓存分数：' + this.storageScore, typeof (this.storageScore));
             wx.setStorage({
                 key: "highScore",
-                data: curScore,
+                data: curScore + '-' + new Date().getTime(),
                 success: this.setUserCloudStorage(curScore)
             })
         }
@@ -264,7 +271,13 @@ cc.Class({
     //上报分数
     setUserCloudStorage(score) {
         wx.setUserCloudStorage({
-            "KVDataList": [{ "key": "score", "value": JSON.stringify(score) }],
+            "KVDataList": [{ 
+                "key": "score",
+                "value": JSON.stringify(score) 
+            },{
+                "key": "time",
+                "value": JSON.stringify(new Date().getTime())
+            }],
             "success": function () {
                 console.log("上报setUserCloudStorage分数success");
             }

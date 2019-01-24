@@ -12,7 +12,7 @@ cc.Class({
             if(data.openId){
                 _self.openId = data.openId;
             }
-            if(data.type == 2){
+            if(data.type == 3){
                 _self.content = _self.scrollView.content;
                 _self.items = []; // 存储实际创建的项数组
                 _self.updateTimer = 0;  

@@ -14,7 +14,7 @@ cc.Class({
             if(data.openId){
                 _self.openId = data.openId;
             }
-            if(data.type == "1"){
+            if(data.type == 1){
                 _self.content = _self.scrollView.content;
                 _self.items = []; // 存储实际创建的项数组
                 _self.updateTimer = 0;  
@@ -22,7 +22,7 @@ cc.Class({
                 _self.getFriendCloudStorage();
                 _self.asyncStatus = true;
             }
-            if(data.type == "100"){
+            if(data.type == 100){
                 _self.content = _self.scrollView.content;
                 _self.content.removeAllChildren();
                 let node = cc.instantiate(_self.loading);
@@ -37,7 +37,7 @@ cc.Class({
         let _self = this;
         _self.content.removeAllChildren();
         wx.getFriendCloudStorage({
-            keyList: ["score"],
+            keyList: ["score","time"],
             success: function (res) {
                 let _data = _self.bubbleSort(res.data).reverse();
                 if (!_data.length) {
@@ -57,23 +57,33 @@ cc.Class({
     //排名排序
     bubbleSort(arr) {
         if (Object.prototype.toString.call(arr) !== '[object Array]') return;
-        let [low, high] = [0, arr.length - 1];
+        let _arr = [];
+        let _weekHm = 7 * 24 * 3600 *1000;
+        for(let i in arr){
+            if(arr[i].KVDataList[1] && (parseInt(new Date().getTime()) - parseInt(arr[i].KVDataList[1].value) <= _weekHm)){
+                _arr.push(arr[i])
+            }
+        }
+        if(!_arr.length){
+            return _arr;
+        }
+        let [low, high] = [0, _arr.length - 1];
         let j;
         while (low < high) {
             for (j = low; j < high; j++) {
-                if (parseInt(arr[j].KVDataList[0].value) > parseInt(arr[j + 1].KVDataList[0].value)) {
-                    [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                if (parseInt(_arr[j].KVDataList[0].value) > parseInt(_arr[j + 1].KVDataList[0].value)) {
+                    [_arr[j], _arr[j + 1]] = [_arr[j + 1], _arr[j]];
                 }
             }
             --high;
             for (j = high; j > low; --j) {
-                if (parseInt(arr[j].KVDataList[0].value) < parseInt(arr[j - 1].KVDataList[0].value)) {
-                    [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]];
+                if (parseInt(_arr[j].KVDataList[0].value) < parseInt(_arr[j - 1].KVDataList[0].value)) {
+                    [_arr[j], _arr[j - 1]] = [_arr[j - 1], _arr[j]];
                 }
             }
             ++low;
         }
-        return arr;
+        return _arr;
     },
     initData(data){
         let _self = this;
